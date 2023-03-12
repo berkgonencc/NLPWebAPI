@@ -6,14 +6,14 @@
 - ie. input:
 
 	{ 
-		"UserText": "Seksen 7 bin iki 100 on altı lira borcum var, bin elli beş lira daha verirsen eğer seksensekizbin271 olur" 
+		"UserText": "Seksen 7 bin iki 100 on altı lira borcum var, bin elli beş lira daha verirsen eğer, seksensekizbin271 lira olur" 
 	} 	
 
 - The text data sent by POST is processed in the API method, and the numbers written in the sentence are converted to numeric format.
 - ie. output:
 
 	{ 
-		"Output": "87216 lira borcum var, 1055 lira daha verirsen eğer 88271 olur" 
+		"Output": "87216 lira borcum var, 1055 lira daha verirsen eğer, 88271 lira olur" 
 	}
 
 ## Technologies Used:

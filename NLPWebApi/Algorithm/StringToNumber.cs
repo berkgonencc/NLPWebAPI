@@ -1,14 +1,15 @@
 ﻿namespace NLPWebApi.Algorithm
 {
-    public class Parser
+    public class StringToNumber
     {
         // Given a string text, the method convert it string text with digits
-        public string InputParser(string text)
+        public string Run(string text)
         {
-            ConvertToDigit convertToDigit = new ConvertToDigit();
-            SplitConnectedNumberWords splitConnectedNumberWords = new SplitConnectedNumberWords();
             try
             {
+                ConvertToDigit convertToDigit = new ConvertToDigit();
+                SplitConnectedNumberWords splitConnectedNumberWords = new SplitConnectedNumberWords();
+
                 // Firstly, check if there is a connected words and digits ( ie: "ikiyüzelli", "50" )
                 var textArray = splitConnectedNumberWords.SplitConnectedWords(text).Split(" ");
 
@@ -52,7 +53,7 @@
             }
             catch
             {
-                Console.WriteLine("Error: InputParser");
+                Console.WriteLine("Error: Run");
                 return "";
             }
         }

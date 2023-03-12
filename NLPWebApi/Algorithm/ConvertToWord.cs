@@ -1,4 +1,4 @@
-﻿using NLPWebApi.Jobs;
+﻿using NLPWebApi.Common;
 
 namespace NLPWebApi.Algorithm
 {
@@ -42,14 +42,13 @@ namespace NLPWebApi.Algorithm
                             thisChunk = tmpReverse.Substring(i * chunkSize, chunkSize);
 
 
-                        // TODO: Take care of 0{...}
-                        // TODO: Probably can be optimized 
+
                         foreach (var item in Dictionary.allNumbersDict)
                         {
                             if (thisChunk.Length != 3)
                                 break;
 
-                            if (item.Value == thisChunk[2] - '0')// Yuzler
+                            if (item.Value == thisChunk[2] - '0') // Hundreds
                             {
                                 if (item.Value != 1)
                                     output.Add(item.Key);
@@ -63,7 +62,7 @@ namespace NLPWebApi.Algorithm
                             if (thisChunk.Length < 2)
                                 break;
 
-                            if (item.Value == thisChunk[1] - '0')// Onlar
+                            if (item.Value == thisChunk[1] - '0') // Tens
                             {
                                 int tmp = item.Value * 10;
                                 foreach (var val in Dictionary.allNumbersDict)
@@ -82,7 +81,7 @@ namespace NLPWebApi.Algorithm
                             if (thisChunk.Length < 1)
                                 break;
 
-                            if (item.Value == thisChunk[0] - '0') // birler
+                            if (item.Value == thisChunk[0] - '0') // Ones
                             {
                                 output.Add(item.Key);
                                 break;
@@ -96,8 +95,8 @@ namespace NLPWebApi.Algorithm
                         }
 
                         // Use stack to reverse the order
-                        // reverse the chunks ex: c1c2 will be c2c1 where c1 = bes yuz on uc , c2 = bes bin
-                        List<string> tmpCopyList = new List<string>(output); // copy output before push the stack ( reference issue ) 
+                        // reverse the chunks ex: c1c2 will be c2c1
+                        List<string> tmpCopyList = new List<string>(output); 
                         returnValue.Push(tmpCopyList);
                         output.Clear();
                     }

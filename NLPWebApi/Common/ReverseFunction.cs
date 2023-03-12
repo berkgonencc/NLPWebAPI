@@ -1,4 +1,4 @@
-﻿namespace NLPWebApi.Jobs
+﻿namespace NLPWebApi.Common
 {
     public class ReverseFunction
     {

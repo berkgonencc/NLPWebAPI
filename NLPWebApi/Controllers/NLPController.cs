@@ -15,8 +15,8 @@ namespace NLPWebApi.Controllers
             {
                 UserText = inputText.UserText,
             };
-            Parser parser = new Parser();
-            string output = parser.InputParser(input.UserText);
+            StringToNumber converter = new StringToNumber();
+            string output = converter.Run(input.UserText);
 
             return Ok("Output" + $": '{output}'");
         }

@@ -12,7 +12,7 @@
             {
                 string[] inputArray = input.ToLower().Split(' ');
 
-                // special case, when the array starts with "bin",
+                // Special case: "bin", when the array starts with "bin",
                 // the method add "bir" to beginning of the array
                 if (inputArray[0] == "bin")
                 {
