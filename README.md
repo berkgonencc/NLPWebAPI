@@ -1,6 +1,6 @@
 # NLP – Character to Number Conversion ( for Turkish Characters )
 
-- MVC Web API method takes one string text input.
+- Web API method takes one string text input.
 - The method can handle connected words.
 - It works in the range of 0 to billion. ( expandable to cover large numbers )
 - Related string input is sent by POST operation in JSON format.
